@@ -117,6 +117,26 @@ app.post('/deleteDrink/:id', async (req, res) => {
 
 })
 
+app.post('/updateDrink/:id', async (req, res) => {
+
+  try {
+    console.log("req.parms.id: ", req.params.id) 
+    
+    client.connect; 
+    const collection = client.db("chillAppz").collection("drinkz");
+    let result = await collection.findOneAndUpdate( { _id: new ObjectId( req.params.id) })
+    .then(result => {
+      console.log(result); 
+      res.redirect('/');
+    })
+    .catch(error => console.error(error))
+  }
+  finally{
+    //client.close()
+  }
+
+})
+
 
 console.log('in the node console');
 
