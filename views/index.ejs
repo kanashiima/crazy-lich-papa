@@ -50,37 +50,6 @@
 <!-- Navbar end -->
 
 
-<!-- <style>
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-.dropbtn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-}
-.dropdown-content {
-  display: none;
-  position: absolute;
-  z-index: 1;
-}
-.dropdown-content ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.dropdown-content li {
-  padding: 8px 12px;
-}
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-</style> -->
-
-
 <div class="border-bottom border-grey"></div>
 <div class="row justify-content-center pt-5">
    <div class="col-lg-4">
@@ -95,14 +64,14 @@
          <form>
              <div class="form-group px-3">
 
-   Your Closet</h4>
-        <% for (var i=0; i< drinkData.length; i++ ) { %>
-        <form method="POST" action="/updateDrink/<%= drinkData[i]._id %>" style="display: inline-block">  
-          <%= drinkData[i].name %> (<%= drinkData[i].size %>) (<%= drinkData[i].brand %>)  (<%= drinkData[i].originalprice %>) (<%= drinkData[i].currentvalue %>)
-          <input type="submit" value="update">
-        </form>
-        <br/>
-      <% } %>
+           <h4> Your Closet</h4>
+                 <% for (var i=0; i< drinkData.length; i++ ) { %>
+                 <form method="POST" action="/updateDrink/<%= drinkData[i]._id %>" style="display: inline-block">  
+                   <%= drinkData[i].name %> (<%= drinkData[i].size %>) (<%= drinkData[i].brand %>)  (<%= drinkData[i].originalprice %>) (<%= drinkData[i].currentvalue %>)
+                     <input type="submit" value="update">
+                   </form>
+                     <br/>
+                   <% } %>
      
 
              </div>
