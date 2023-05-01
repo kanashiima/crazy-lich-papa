@@ -50,40 +50,7 @@
 <!-- Navbar end -->
 
 
-<div class="border-bottom border-grey"></div>
-<div class="row justify-content-center pt-5">
-   <div class="col-lg-4">
-      <h4 class="pb-2">
-   
-      <br/>
-   </div>
-   <div class="col-lg-8 text-center pt-2">
-      <div class="card py-4 mb-5 mt-md-3 bg-white rounded" style="box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175)">
 
-
-         <form>
-             <div class="form-group px-3">
-
-           <h4> Your Closet</h4>
-                 <% for (var i=0; i< drinkData.length; i++ ) { %>
-                 <form method="POST" action="/updateDrink/<%= drinkData[i]._id %>" style="display: inline-block">  
-                   <%= drinkData[i].name %> (<%= drinkData[i].size %>) (<%= drinkData[i].brand %>)  (<%= drinkData[i].originalprice %>) (<%= drinkData[i].currentvalue %>)
-                     <input type="submit" value="update">
-                   </form>
-                     <br/>
-                   <% } %>
-     
-
-             </div>
-             <div class="form-group row mb-0 mr-4">
-                 <div class="col-md-8 offset-md-4 text-right">
-                     
-                 </div>
-             </div>
-         </form>
-      </div>
-   </div>
-</div>
 <div class="border-bottom border-grey"></div>
 <main class="py-4">
             <div class="container">
@@ -111,6 +78,9 @@
 
                      </div>
                   </div>
+               </div>
+               </div>
+               </div>
                </div>
 
 
