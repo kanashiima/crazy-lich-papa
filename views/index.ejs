@@ -50,7 +50,7 @@
 <!-- Navbar end -->
 
 
-<!-- Closet / Owned shoes -->
+
 <div class="border-bottom border-grey"></div>
 <main class="py-4">
             <div class="container">
@@ -75,91 +75,49 @@
                    <% } %>
                            
                         </form>
-                        <div class="border-bottom border-grey"></div>
-                        <br/>
-                        
- <form>
-  <h3> Add a new shoe to your collection </h3>
 
-
-  <form method="POST" action="/addDrink">
-    <label for="name">Name</label>
-      <input name="name">
-      <br>
-      <label for="size">Size</label>
-        <input name="size">
-      <br>
-      <label for="brand">Brand</label>
-      <input name="brand">
-    <br>
-    <label for="originalprice">Original Price</label>
-    <input name="originalprice">
-  <br>
-  <label for="currentvalue">Current Value</label>
-  <input name="currentvalue">
-      <input type="submit" value="Submit" />
-  </form>
-  
-  
-  <br/>
-                           
-                        </form>
-                     
+                     </div>
                   </div>
                </div>
-              </div>
-             </div>
-            </div>
+               </div>
+               </div>
+               </div>
 
 
+<!--
+  <h3> Your Closet</h3>
+ <% for (var i=0; i< drinkData.length; i++ ) { %>
+  <form method="POST" action="/updateDrink/<%= drinkData[i]._id %>" style="display: inline-block">  
+    <%= drinkData[i].name %> (<%= drinkData[i].size %>) (<%= drinkData[i].brand %>)  (<%= drinkData[i].originalprice %>) (<%= drinkData[i].currentvalue %>)
+    <input type="submit" value="update">
+  </form>
+  <br/>
+<% } %>
 
 
 <br/>
 
 
-<!-- Add shoes  -->
-<div class="border-bottom border-grey"></div>
-<main class="py-4">
-            <div class="container">
-               <div class="row justify-content-center">
-                  <!--<div class="col-lg-4">
-                    
-                     <span class="text-justify mb-3" style="padding-top:-3px;">Please sign in using your email or password <br><br> You can also sign in using your GitHub</span>
-                  </div> -->
-                  <div class="col-lg-8 text-center pt-2">
-                     <div class="card py-4 mb-5 mt-md-3 bg-white rounded " style="box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175)">
 
-                        <form>
-                            <div class="form-group px-3">
 
-                                 <h4> Add a new shoe to your collection </h4>
-                                    <form method="POST" action="/addDrink">
-                                      <label for="name">Name</label>
-                                        <input name="name">
-                                        <br>
-                                       <label for="size">Size</label>
-                                        <input name="size">
-                                       <br>
-                                      <label for="brand">Brand</label>
-                                      <input name="brand">
-                                    <br>
-                                    <label for="originalprice">Original Price</label>
-                                    <input name="originalprice">
-                                  <br>
-                                  <label for="currentvalue">Current Value</label>
-                                  <input name="currentvalue">
-                                      <input type="submit" value="Submit" />
-                                  </form>
-                           
-                        </form>
+db.shoes.aggregate([{$project: {total: {$add: ["currentvalue"]}}}])-->
 
-                     </div>
-                  </div>
-               </div>
-              </div>
-             </div>
-            </div>
-<!-- <h3> Add a new shoe to your collection </h3>
+
+<br/>
+
+
+
+
+<!-- <% for (var i=0; i< drinkData.length; i++ ) { %>
+  <form method="POST" action="/deleteDrink/<%= drinkData[i]._id %>" style="display: inline-block">  
+    <%= drinkData[i].name %> (<%= drinkData[i].size %>) (<%= drinkData[i].brand %>) (<%= drinkData[i].originalprice %>) (<%= drinkData[i].currentvalue %>)
+    <input type="submit" value="delete">
+  </form>
+  <br/>
+<% } %> -->
+
+
+<h3> Add a new shoe to your collection </h3>
 
 
 <form method="POST" action="/addDrink">
@@ -178,8 +136,7 @@
 <label for="currentvalue">Current Value</label>
 <input name="currentvalue">
     <input type="submit" value="Submit" />
-</form> 
--->
+</form>
 
 
 <br/>
